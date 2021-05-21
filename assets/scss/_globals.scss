@@ -1,0 +1,30 @@
+// *,
+// *::after,
+// *::before {
+//     box-sizing: border-box;
+// }
+
+// body {
+//     font-family: 'Raleway', sans-serif;
+//     font-family: 'Open Sans', sans-serif;
+// }
+
+.bg-home-img {
+    background-image: url(../images/bg-home.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.hero-banner {
+    border-radius: 0 0 0 300px;
+    top: 0;
+    left: 0;
+    height: 70vh;
+    overflow: hidden;
+    position: absolute;
+    transform: skewY(-4deg);
+    transform-origin: top left;
+    width: 100%;
+    z-index: -1;
+}

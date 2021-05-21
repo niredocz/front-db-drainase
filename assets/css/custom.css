@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+.bg-home-img {
+  background-image: url(../images/bg-home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.hero-banner {
+  border-radius: 0 0 0 300px;
+  top: 0;
+  left: 0;
+  height: 70vh;
+  overflow: hidden;
+  position: absolute;
+  transform: skewY(-4deg);
+  transform-origin: top left;
+  width: 100%;
+  z-index: -1;
+}
+/*# sourceMappingURL=custom.css.map */
