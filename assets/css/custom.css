@@ -1,22 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-.bg-home-img {
-  background-image: url(../images/bg-home.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
 }
 
-.hero-banner {
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.bg-home {
+  padding: 270px 0 180px;
+}
+
+.bg-home .hero-banner {
   border-radius: 0 0 0 300px;
   top: 0;
   left: 0;
   height: 70vh;
   overflow: hidden;
   position: absolute;
-  transform: skewY(-4deg);
+  transform: skewY(-6.75deg);
   transform-origin: top left;
   width: 100%;
   z-index: -1;
+  box-shadow: -3px 4px 0 7px #EDBE14;
+}
+
+.bg-home-img {
+  background-image: url(../images/bg-home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25% 0%;
+  height: 100%;
+  width: 100%;
+}
+
+.bg-home-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 246, 215, 0.56) 35.37%, rgba(237, 190, 20, 0.37) 59.4%, rgba(237, 190, 20, 0.6) 100%);
+}
+
+.navbar.navbar-custom a {
+  color: #253E75 !important;
+}
+
+.logo span {
+  margin-left: 1rem;
+}
+
+.navbar-nav li {
+  padding: 0 20px;
+}
+
+#home .hero-title {
+  max-width: 420px;
+}
+
+#home .hero-title .title {
+  font-size: 3.4em;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=custom.css.map */
