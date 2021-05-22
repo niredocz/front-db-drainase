@@ -10,6 +10,9 @@
    <meta name='author' content='phicosdev_team'/>
    <!-- SEO keyword -->
    <meta name='keyword' content='db-drainase, drainase, surakarta, solo, disperum, kpp'>
+   <!-- Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+   <!-- Styles -->
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="assets/css/style.css">
    <link rel='stylesheet' href='assets/css/custom.css'>
@@ -20,20 +23,15 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
     <div class="container-fluid">
         <!-- LOGO -->
-        <a class="logo text-white d-flex align-items-center text-uppercase" href="index.html">
+        <a class="logo all-center" href="index.html">
             <img src="assets/images/img-logo.png" alt="logo">
             <span>Database Drainase<br>Kota Surakarta</span>
         </a>
-        <!-- <a class="logo text-uppercase" href="index-2.html">
-            <img src="assets/images/img-logo.png" alt="" class="logo-light" height="18" />
-            <img src="images/logo-dark.png" alt="" class="logo-dark" height="18" />
-        </a> -->
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="mdi mdi-menu"></i>
+            <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
+            <ul class="navbar-nav ml-auto mr-4 navbar-center" id="mySidenav">
                 <li class="nav-item active">
                     <a href="index.html" class="nav-link">Beranda</a>
                 </li>
@@ -41,65 +39,109 @@
                     <a href="#" class="nav-link">Peta</a>
                 </li>
             </ul>
-            <button class="btn btn-info navbar-btn">
+            <button class="navbar-btn">
                 <span>Masuk</span>
-                <i></i>
+                <i class="fas fa-chevron-right"></i>
             </button>
         </div>
     </div>
 </nav>
 <!-- Navbar End -->
 
-<!-- home start -->
+<!-- Home Hero Section Start -->
 <section class="bg-home" id="home">
-    <div class="home-center">
-        <div class="home-desc-center">
-            <div class="hero-banner">
-                <div class="bg-home-img"></div>
+    <div class="hero-banner">
+        <div class="bg-home-img"></div>
+        <div class="bg-home-color"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 all-center">
+                <div class="hero-title text-white">
+                    <h2 class="title text-white">Disperum KPP Kota Surakarta</h2>
+                    <p class="desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore architecto aut fugiat, iure distinctio illum modi pariatur vel inventore! In quibusdam iusto placeat magnam quam.</p>
+                    <a class="hero-btn" href="#">
+                        <span>Lihat Peta</span>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </a>
+                </div>
             </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="text-white">
-                            <h2 class="text-white">Disperum KPP Kota Surakarta</h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore architecto aut fugiat, iure distinctio illum modi pariatur vel inventore! In quibusdam iusto placeat magnam quam.</p>
-                            <a href="#">Lihat Peta</a>
-                        </div>
+            <div class="col-sm-6 all-center">
+                <img class="img-hero" src="assets/images/img-hero.png" alt="img-hero">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Home Hero Section End -->
+
+<!-- Counter Section Start -->
+<section id="counter-home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 all-center">
+                <div class="counter-wrapper">
+                    <div class="counter-img">
+                        <img class="img-filter" src="assets/images/img-counter.png" alt="img-counter">
                     </div>
-                    <div class="col-sm-6 d-flex justify-content-center">
-                        <img src="assets/images/img-hero.png" alt="img-hero">
+                    <div class="counter-detail text-center">
+                        <h1 class="title">3.482</h1>
+                        <p>Titik Drainase</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 all-center">
+                <div class="counter-wrapper">
+                    <div class="counter-img">
+                        <img class="img-filter" src="assets/images/img-counter.png" alt="img-counter">
+                    </div>
+                    <div class="counter-detail text-center">
+                        <h1 class="title">2.984</h1>
+                        <p>Total Terdata</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 all-center">
+                <div class="counter-wrapper">
+                    <div class="counter-img">
+                        <img class="img-filter" src="assets/images/img-counter.png" alt="img-counter">
+                    </div>
+                    <div class="counter-detail text-center">
+                        <h1 class="title">12.984</h1>
+                        <p>Jumlah Terdampak</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- home end -->
+<!-- Counter Section End -->
 
+<!-- Graph Section Start -->
+<section id="graph-home">
+    <div class="container">
+        <div class="chart">
+            <div id="chartdiv"></div>
+            <div class="chart-detail">
+                <i class="fas fa-chart-bar"></i>
+                <h3 class="title">Grafik Perkembangan Data per <span class="text-primary">Tahun</span></h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil dolores ullam nisi laudantium necessitatibus aliquam optio eligendi non itaque atque!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Graph Section End -->
 
-   <header>
-       <nav>
-           <a href="index.html">
-               <img src="assets/images/img-logo.png" alt="logo">
-               <span>Database Drainase<br>Kota Surakarta</span>
-           </a>
-           <ul>
-               <li><a href="index.html">Beranda</a></li>
-               <li><a href="#">Peta</a></li>
-               <li><a href="#" class="login-button"><span>Masuk</span><i class="chev-right"></i></a></li>
-           </ul>
-       </nav>
-   </header>
-   <section class="hero">
-       <div class="hero-banner">
-           <div class="bg-home"></div>
-       </div>
-   </section>
-   <footer></footer>
+<footer></footer>
 
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/js/scrollspy.min.js"></script>
-   <script src="assets/js/app.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/scrollspy.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+<!-- Amcharts Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="assets/js/amcharts.init.js"></script>
 </body>
 </html>
