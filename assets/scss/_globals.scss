@@ -1,9 +1,4 @@
-// *,
-// *::after,
-// *::before {
-//     box-sizing: border-box;
-// }
-
+a,
 h1,
 h2,
 h3,
@@ -11,28 +6,38 @@ h4,
 h5,
 h6 {
     font-family: 'Raleway', sans-serif;
-
+    color: $black-dark;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
+    color: $black-medium;
+}
+
+.text {
+    &-primary {
+        color: $primary-dark !important;
+    }
+    &-secondary {
+        color: $secondary-dark !important;
+    }
 }
 
 .bg {
     &-home {
-        padding: 270px 0 180px;
+        padding: 270px 0 100px;
         
         .hero-banner {
-            border-radius: 0 0 0 300px;
             top: 0;
             left: 0;
+            z-index: -1;
+            width: 100%;
             height: 70vh;
             overflow: hidden;
             position: absolute;
             transform: skewY(-6.75deg);
             transform-origin: top left;
-            width: 100%;
-            z-index: -1;
+            border-radius: 0 0 0 300px;
             box-shadow: -3px 4px 0 7px $primary-dark;
         }
     }
@@ -61,19 +66,55 @@ body {
     
 }
 
-
-.navbar.navbar-custom a {
-    color: $secondary-dark !important;
+.all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo span {
-    margin-left: 1rem;
+.img-filter {
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
 }
 
-.navbar-nav {
-    li {
-        padding: 0 20px;
+.navbar-custom {
+    .logo span {
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-left: 1rem;
+        line-height: 28px;
     }
+    a {
+       color: $secondary-dark !important;
+   }
+   .navbar-nav {
+       li {
+           padding: 0 20px;
+       }
+       .nav-item.active .nav-link {
+           font-weight: 700;
+       }
+   }
+   .navbar-btn {
+       color: #fff;
+       border-radius: 8px;
+       padding: .5rem 1.2rem;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       border: 1px solid $secondary-dark;
+       background-color: $secondary-dark;
+       transition: all .15s linear;
+
+       &:hover {
+           color: $secondary-dark;
+           border-color: #fff;
+           background-color: #fff;
+       }
+
+       i {
+           margin-left: 10px;
+       }
+   }
 }
 
 #home {
@@ -81,9 +122,102 @@ body {
         max-width: 420px;
 
         .title {
-            font-size: 3.4em;
+            font-size: 3em;
             font-weight: 600;
             text-transform: uppercase;
         }
+        .desc {
+            font-weight: 400;
+            margin-bottom: 25px;
+            position: relative;
+
+            &::before {
+                content: '';
+                top: -10px;
+                left: -20px;
+                width: 77px;
+                height: 77px;
+                position: absolute;
+                border-radius: 3px;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+        }
+        .hero-btn {
+            color: #fff;
+            border-radius: 8px;
+            padding: .6rem 1.8rem;
+            border: 1px solid #fff;
+            transition: all .15s linear;
+
+            &:hover {
+                color: $primary-dark;
+                background-color: #fff;
+            }
+
+            i {
+                margin-left: 7px;
+            }
+        }
     }
+}
+
+#counter-home {
+    padding: 50px 0;
+    .counter-detail {
+        margin-top: 15px;
+        color: $black-medium;
+
+        .title {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 0;
+            color: $black-dark;
+            font-family: 'Open sans', sans-serif;
+        }
+    }
+}
+
+#graph-home {
+    .chart {
+        position: relative;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 75% 25%;
+        gap: 1.5em;
+        padding: 2em 1.5em;
+        border-radius: 35px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(266.87deg, #FFFAEA 0%, #EFDD99 100%);
+
+        i {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1em;
+            font-size: 25px;
+            background-color: $primary-dark;
+            border-radius: 0px 35px 35px 35px;
+        }
+
+        #chartdiv {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border-radius: 15px;
+            background-color: #fff;
+        }
+        .chart-detail {
+            margin: auto 0;
+
+            .title {
+                max-width: 180px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+footer {
+    min-height: 300px;
 }

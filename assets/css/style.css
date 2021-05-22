@@ -59,7 +59,7 @@ File: Main scss file
 *******************/
 body {
   font-family: "Nunito", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   background-color: #ffffff;
 }
 
@@ -83,7 +83,7 @@ a {
 
 p {
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .section {
