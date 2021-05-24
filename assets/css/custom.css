@@ -70,11 +70,17 @@ body {
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
 }
 
+.logo img {
+  transition: all .2s ease-out;
+  transform: scale(1);
+}
+
 .logo span {
   font-size: 1.5em;
   font-weight: 700;
   margin-left: 1rem;
   line-height: 28px;
+  transition: all .2s ease-out;
 }
 
 .navbar-custom a {
@@ -101,18 +107,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #253E75;
+  border: 1px solid transparent;
   background-color: #253E75;
-  transition: all .15s linear;
+  transition: all .2s linear;
 }
 
 .navbar-custom .navbar-btn:hover {
   color: #253E75;
-  background-color: #fff;
+  background-color: #ffffff7d;
+  border: 1px solid #ffffff7d;
+  backdrop-filter: blur(5px);
 }
 
 .navbar-custom .navbar-btn i {
   margin-left: 10px;
+}
+
+.navbar-custom.nav-sticky .navbar-btn:hover {
+  color: #253E75;
+  background-color: #fff;
+  border: 1px solid #253E75;
+}
+
+.navbar-custom.nav-sticky .logo img {
+  transform: scale(0.9);
+}
+
+.navbar-custom.nav-sticky .logo span {
+  font-size: 1.3em;
+  line-height: 1.2em;
 }
 
 #home .hero-title {
@@ -182,7 +205,7 @@ body {
   grid-auto-flow: column;
   grid-template-columns: 75% 25%;
   gap: 1.5em;
-  padding: 2em 1.5em;
+  padding: 1.5em;
   border-radius: 35px;
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.1);
@@ -193,7 +216,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1em;
+  padding: .75em;
   font-size: 25px;
   background-color: #EDBE14;
   border-radius: 0px 35px 35px 35px;
@@ -324,6 +347,9 @@ footer .footnote p {
   .logo span {
     font-size: 1em;
     line-height: 1em;
+  }
+  #graph-home .chart i {
+    font-size: 20px;
   }
   footer .social-info .footer-logo .logo {
     margin: 0 auto 20px;
