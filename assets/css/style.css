@@ -579,12 +579,12 @@ p {
   .navbar-custom .navbar-nav .nav-item .nav-link {
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
-    color: rgba(40, 40, 46, 0.8) !important;
+    /* color: rgba(40, 40, 46, 0.8) !important; */
     margin: 0px;
     padding: 6px 0px;
   }
   .navbar-custom .navbar-nav .nav-item.active .nav-link {
-    color: #673ab7 !important;
+    /* color: #673ab7 !important; */
   }
   .navbar-toggler {
     font-size: 24px;

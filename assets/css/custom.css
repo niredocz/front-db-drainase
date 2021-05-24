@@ -33,7 +33,7 @@ body {
   left: 0;
   z-index: -1;
   width: 100%;
-  height: 70vh;
+  height: 90%;
   overflow: hidden;
   position: absolute;
   transform: skewY(-6.75deg);
@@ -46,7 +46,7 @@ body {
   background-image: url(../images/bg-home.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 25% 0%;
+  background-position: 25% 5%;
   height: 100%;
   width: 100%;
 }
@@ -209,6 +209,7 @@ body {
 
 #graph-home .chart .chart-detail {
   margin: auto 0;
+  padding-right: 1.5em;
 }
 
 #graph-home .chart .chart-detail p {
@@ -238,6 +239,7 @@ footer {
 
 footer * {
   transition: all .15s linear;
+  word-break: break-word;
 }
 
 footer .contact-info .contact-wrapper .title {
@@ -291,11 +293,88 @@ footer .footnote p {
 }
 
 @media screen and (max-width: 768px) {
+  .bg-home {
+    padding: 100px 0;
+  }
   .navbar-custom .navbar-nav li {
     padding: 20px;
   }
   .navbar-custom .navbar-btn {
     margin: 10px;
+  }
+  #counter-home {
+    padding: 20px 0;
+  }
+  #counter-home .counter-wrapper {
+    margin-bottom: 2em;
+  }
+  footer .contact-wrapper {
+    margin-bottom: .8em;
+  }
+  footer .contact-wrapper p {
+    margin-left: 1.5em !important;
+    font-size: .8em;
+  }
+  footer .footnote p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo span {
+    font-size: 1em;
+    line-height: 1em;
+  }
+  footer .social-info .footer-logo .logo {
+    margin: 0 auto 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #home .hero-banner {
+    height: 100%;
+  }
+  #home .hero-title .hero-btn {
+    float: right;
+  }
+  #counter-home .counter-wrapper {
+    margin-bottom: 1em;
+  }
+  #graph-home .chart {
+    grid: none;
+  }
+  #graph-home .chart #chartdiv {
+    min-height: 300px;
+  }
+  #graph-home .chart .chart-detail .title {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  #graph-home .chart {
+    grid-template-columns: 70% 30%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1400px) {
+  .bg-home {
+    padding: 150px 0 100px;
+  }
+  .bg-home .hero-banner {
+    height: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-lg {
+    max-width: 1140px;
   }
 }
 /*# sourceMappingURL=custom.css.map */

@@ -32,7 +32,7 @@ body {
             left: 0;
             z-index: -1;
             width: 100%;
-            height: 70vh;
+            height: 90%;
             overflow: hidden;
             position: absolute;
             transform: skewY(-6.75deg);
@@ -46,7 +46,7 @@ body {
         background-image: url(../images/bg-home.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 25% 0%;
+        background-position: 25% 5%;
         height: 100%;
         width: 100%;
     }
@@ -213,6 +213,7 @@ body {
         }
         .chart-detail {
             margin: auto 0;
+            padding-right: 1.5em;
 
             p {
                 position: relative;
@@ -243,6 +244,7 @@ footer {
 
     * {
         transition: all .15s linear;
+        word-break: break-word;
     }
 
     .contact-info {

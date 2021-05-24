@@ -1,4 +1,7 @@
 @media screen and (max-width:768px) {
+    .bg-home {
+        padding: 100px 0;
+    }
     .navbar-custom {
         .navbar-nav {
             li {
@@ -8,5 +11,94 @@
         .navbar-btn {
             margin: 10px;
         }
+    }
+    #counter-home {
+        padding: 20px 0;
+
+        .counter-wrapper {
+            margin-bottom: 2em;
+        }
+    }
+    footer {
+        .contact-wrapper {
+            margin-bottom: .8em;
+            
+            p {
+                margin-left: 1.5em !important;
+                font-size: .8em;
+            }
+        }
+        .footnote p {
+            font-size: 12px;
+        }
+    }
+}
+@media screen and (max-width:480px) {
+    .logo span {
+        font-size: 1em;
+        line-height: 1em;
+    }
+    footer .social-info .footer-logo .logo {
+        margin: 0 auto 20px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #home  {
+        .hero-banner {
+            height: 100%;
+    
+        }
+        .hero-title {
+            .hero-btn {
+                float: right;
+            }    
+        }
+
+    }
+    // .img-hero {
+    //     display: none;
+    // }
+    #counter-home .counter-wrapper {
+        margin-bottom: 1em;
+    }
+    #graph-home .chart {
+        grid: none;
+
+        #chartdiv {
+            min-height: 300px;
+        }
+    
+        .chart-detail {
+            .title {
+                max-width: 280px;
+            }
+        }
+    }
+}
+@media (min-width:768px) and (max-width:992px) {
+    #graph-home .chart {
+        grid-template-columns: 70% 30%;
+    }
+}
+
+@media (min-width:768px) and (max-width:1400px) {
+    .bg-home {
+        padding: 150px 0 100px;
+
+        .hero-banner {
+            height: 100%;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .container-lg {
+        max-width: 960px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container-lg {
+        max-width: 1140px;
     }
 }
