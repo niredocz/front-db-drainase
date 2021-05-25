@@ -1,10 +1,9 @@
 am4core.ready(function() {
-
     // Themes begin
     am4core.useTheme(am4themes_animated);
     // Themes end
     
-    var chart = am4core.create("chartdiv", am4charts.XYChart);
+    var chart = am4core.create("chart-home", am4charts.XYChart);
     
     chart.data = [{
      "country": "USA",
@@ -72,4 +71,4 @@ am4core.ready(function() {
     
     categoryAxis.sortBySeries = series;
     
-    }); // end am4core.ready()
+});
