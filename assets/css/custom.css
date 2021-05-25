@@ -115,7 +115,7 @@ body {
 .navbar-custom .navbar-btn:hover {
   color: #253E75;
   background-color: #ffffff7d;
-  border: 1px solid #ffffff7d;
+  border: 1px solid transparent;
   backdrop-filter: blur(5px);
 }
 
@@ -222,7 +222,7 @@ body {
   border-radius: 0px 35px 35px 35px;
 }
 
-#graph-home .chart #chartdiv {
+#graph-home .chart #chart-home {
   width: 100%;
   height: 100%;
   min-height: 350px;
@@ -253,6 +253,104 @@ body {
 #graph-home .chart .chart-detail .title {
   max-width: 180px;
   font-weight: 700;
+}
+
+.search-bar {
+  display: flex;
+  min-width: 400px;
+  padding: .5em 1em;
+  position: relative;
+  border-radius: 25px;
+}
+
+.search-bar .search-btn {
+  font-size: 1em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 14px;
+  border: 1px solid #253E75;
+  padding: .3em 18px;
+  border-radius: 0 5px 5px 0;
+}
+
+#peta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+#peta-section #chart-map {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#peta-section .navigation-btn {
+  color: #455B8B;
+  padding: 1.7em;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #fff;
+  transition: all .15s ease-in-out;
+}
+
+#peta-section .navigation-btn i {
+  font-size: 22px;
+}
+
+#peta-section .navigation-btn:hover {
+  background-color: #FEF6D6;
+  color: #EDBE14;
+}
+
+#peta-section .interface {
+  left: 50%;
+  padding: 1em;
+  border-radius: 35px;
+  backdrop-filter: blur(5px);
+  transform: translateX(-50%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#peta-section .interface .menu-bar {
+  display: flex;
+}
+
+#peta-section .interface .menu-bar .navigation-btn {
+  margin: 0 .5em;
+}
+
+#peta-section .interface-2 {
+  right: 1em;
+  padding: 1em;
+}
+
+#peta-section .interface-2 .zoom {
+  flex-direction: column;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+#peta-section .interface-2 .zoom .ruler {
+  border: 1px solid #253E75;
+  margin: 15px 0;
+}
+
+#peta-section .interface-2 .zoom .navigation-btn {
+  padding: 1em;
+  border-radius: 20px;
+}
+
+#peta-section .interface-2 .compass {
+  margin-bottom: 15px;
+}
+
+#peta-section [class*="interface"] {
+  position: absolute;
+  bottom: 1.5em;
+  z-index: 500;
 }
 
 footer {
@@ -369,7 +467,7 @@ footer .footnote p {
   #graph-home .chart {
     grid: none;
   }
-  #graph-home .chart #chartdiv {
+  #graph-home .chart #chart-home {
     min-height: 300px;
   }
   #graph-home .chart .chart-detail .title {
