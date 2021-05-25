@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+   <!-- Website description -->
+   <meta name='description' content='Database Drainase Kota Surakarta, DB Drainase, Kota Surakarta, Drainase'/>
+   <!-- Author Name -->
+   <meta name='author' content='phicosdev_team'/>
+   <!-- SEO keyword -->
+   <meta name='keyword' content='db-drainase, drainase, surakarta, solo, disperum, kpp'>
+   <!-- Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+   <!-- Leaflet CSS Library -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+   <!-- Styles -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel='stylesheet' href='assets/css/custom.css'>
+   <title>DB Drainase - Kota Surakarta</title>
+</head>
+<body>
+<!--Navbar Start-->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
+    <div class="container-fluid">
+        <!-- LOGO -->
+        <a class="logo all-center" href="index.html">
+            <img src="assets/images/img-logo.png" alt="logo">
+            <span>Database Drainase<br>Kota Surakarta</span>
+        </a>
+        <div class="search-bar bg-white">
+            <input class="form-control" type="text" placeholder="Masukkan Kata Kunci . .">
+            <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
+            <!-- <div class="search-nya">
+            </div> -->
+            <!-- <div class="input-group">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+<section id="peta-section">
+    <div id="chart-map">
+    </div>
+    <div class="interface">
+        <div class="menu-bar">
+            <a class="navigation-btn" href="#"><i class="fas fa-home"></i></a>
+            <a class="navigation-btn" href="#"><i class="fas fa-info-circle"></i></a>
+            <a class="navigation-btn" href="#"><i class="fas fa-layer-group"></i></a>
+            <a class="navigation-btn" href="#"><i class="fas fa-globe-americas"></i></a>
+            <a class="navigation-btn" href="#"><i class="fas fa-user"></i></a>
+        </div>
+    </div>
+    <div class="interface-2">
+        <div class="d-flex compass">
+            <a class="navigation-btn" href="#"><i class="fas far fa-compass"></i></a>
+        </div>
+        <div class="d-flex zoom">
+            <a href="#" class="navigation-btn"><i class="fas fa-search-plus"></i></a>
+            <div class="ruler"></div>
+            <a href="#" class="navigation-btn"><i class="fas fa-search-minus"></i></a>
+        </div>
+    </div>
+</section>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/scrollspy.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+<!-- Leaflet JS Resources -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<script>
+    var map = L.map('chart-map').setView([-0.8349313860427057, 117.76367187500001], 6);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        tileSize: 512,
+        zoomOffset: -1,
+        scrollWheelZoom: false,
+        id: 'mapbox/streets-v11',
+        accessToken: 'pk.eyJ1IjoibmlyZWRvY3oiLCJhIjoiY2tsMjhpM3BkM3JpcDJvcW42cXo3NGNnMSJ9.rBOz7uajzNiVUcgbDfiZ0A'
+    }).addTo(map);
+</script>
+<script type="text/javascript">
+    const csrf = {
+        token_name: 'surakarta_covid',
+        hash: 'f3a8bd94dc1401dfd8332de90c09627e'
+    }
+
+    var map;
+    var basemap = {};
+    var active_basemap = 'osm';
+    var zoom = 13;
+    var layers = {};
+    var search_marker = '';
+    var active_icons = {};
+    const xconfig = [];
+    const xdata = [];
+    const xalias = [];
+
+    $(document).ready(() => {
+        select_kategori();
+
+        init_map();
+    });
+
+
+    function init_map() {
+        map = L.map('map', {
+            attributionControl: false,
+            zoomControl: false
+        }).setView([-0.8349313860427057, 112.76367187500001], 6);
+
+        basemap = {
+            osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map),
+            google_roadmap: L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            }),
+            google_satellite: L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            }),
+            google_hybrid: L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            }),
+            google_terrain: L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            }),
+            esri_world_imagery: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 17
+            }),
+            esri_world_street_map: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}'),
+            esri_world_topo_map: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'),
+            citra_satelit: L.esri.imageMapLayer({
+                url: 'https://portal.ina-sdi.or.id/arcgis/rest/services/CITRASATELIT/JawaBaliNusra_2015_ImgServ1/ImageServer',
+                attribution: 'Badan Informasi Geospasial'
+            }),
+            peta_rbi: L.esri.dynamicMapLayer({
+                url: 'https://portal.ina-sdi.or.id/arcgis/rest/services/IGD/RupabumiIndonesia/MapServer',
+                attribution: 'Badan Informasi Geospasial'
+            }),
+            peta_rbi_opensource: L.tileLayer.wms('http://palapa.big.go.id:8080/geoserver/gwc/service/wms', {
+                maxZoom: 20,
+                layers: "basemap_rbi:basemap",
+                format: "image/png",
+                attribution: 'Badan Informasi Geospasial'
+            })
+
+        }
+        // L.control.layers(basemap).addTo(map);
+        basemap[active_basemap].addTo(map);
+        L.control.scale().addTo(map);
+
+
+        var theMarker = {};
+
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 500);
+    }
+</script>
+</body>
+</html>
