@@ -57,6 +57,7 @@
         }
 
         .interface-2 {
+            right: 0;
             bottom: 15%;
             padding: .5em;
 
@@ -88,9 +89,6 @@
         }
 
     }
-    // .img-hero {
-    //     display: none;
-    // }
     #counter-home .counter-wrapper {
         margin-bottom: 1em;
     }
@@ -149,6 +147,10 @@
 @media (min-width: 992px) {
     .container-lg {
         max-width: 960px;
+    }
+    .container-fluid.navbar-peta {
+        max-width: 100%;
+        padding: 0 2em;
     }
 }
 

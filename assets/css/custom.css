@@ -328,8 +328,7 @@ body {
 }
 
 #peta-section .interface-2 {
-  right: 1em;
-  padding: 1em;
+  right: 2em;
 }
 
 #peta-section .interface-2 .zoom {
@@ -468,6 +467,7 @@ footer .footnote p {
     border-radius: 15px;
   }
   #peta-section .interface-2 {
+    right: 0;
     bottom: 15%;
     padding: .5em;
   }
@@ -537,6 +537,10 @@ footer .footnote p {
 @media (min-width: 992px) {
   .container-lg {
     max-width: 960px;
+  }
+  .container-fluid.navbar-peta {
+    max-width: 100%;
+    padding: 0 2em;
   }
 }
 
