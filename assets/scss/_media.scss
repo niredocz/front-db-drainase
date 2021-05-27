@@ -41,6 +41,36 @@
     #graph-home .chart i {
         font-size: 20px;
     }
+    #peta-section {
+        .navigation-btn {
+            padding: .5em .7em;
+            border-radius: 13px;
+            
+            i {
+                font-size: 14px;
+            }
+        }
+
+        .interface {
+            padding: .5em;
+            border-radius: 15px;
+        }
+
+        .interface-2 {
+            bottom: 15%;
+            padding: .5em;
+
+            .zoom {
+                padding: 5px;
+                border-radius: 15px;
+
+                .navigation-btn {
+                    padding: 4px 7px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
     footer .social-info .footer-logo .logo {
         margin: 0 auto 20px;
     }
@@ -90,6 +120,28 @@
 
         .hero-banner {
             height: 100%;
+        }
+    }
+
+    #peta-section {
+        .navigation-btn {
+            padding: 1.0em;
+            border-radius: 20px;
+
+            i {
+                font-size: 18px;
+            }
+        }
+        .interface {
+            padding: .7em;
+            border-radius: 25px;
+        }
+        .interface-2 {
+            .zoom {
+                .navigation-btn {
+                    padding: .4em;
+                }
+            }
         }
     }
 }

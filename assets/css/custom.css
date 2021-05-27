@@ -286,16 +286,22 @@ body {
 }
 
 #peta-section .navigation-btn {
+  top: 0;
+  display: flex;
+  line-height: 0;
+  padding: 1.2em;
   color: #455B8B;
-  padding: 1.7em;
+  position: relative;
   text-align: center;
-  border-radius: 25px;
+  align-items: center;
+  border-radius: 20px;
   background-color: #fff;
   transition: all .15s ease-in-out;
 }
 
 #peta-section .navigation-btn i {
-  font-size: 22px;
+  font-size: 20px;
+  line-height: 1;
 }
 
 #peta-section .navigation-btn:hover {
@@ -305,8 +311,8 @@ body {
 
 #peta-section .interface {
   left: 50%;
-  padding: 1em;
-  border-radius: 35px;
+  padding: .75em;
+  border-radius: 25px;
   backdrop-filter: blur(5px);
   transform: translateX(-50%);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -328,18 +334,19 @@ body {
 
 #peta-section .interface-2 .zoom {
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 0;
   background-color: #fff;
   border-radius: 25px;
 }
 
 #peta-section .interface-2 .zoom .ruler {
-  border: 1px solid #253E75;
-  margin: 15px 0;
+  border: 1px solid #253e7552;
+  margin: 10px;
 }
 
 #peta-section .interface-2 .zoom .navigation-btn {
-  padding: 1em;
+  padding: .5em;
+  margin: 0 auto;
   border-radius: 20px;
 }
 
@@ -449,6 +456,29 @@ footer .footnote p {
   #graph-home .chart i {
     font-size: 20px;
   }
+  #peta-section .navigation-btn {
+    padding: .5em .7em;
+    border-radius: 13px;
+  }
+  #peta-section .navigation-btn i {
+    font-size: 14px;
+  }
+  #peta-section .interface {
+    padding: .5em;
+    border-radius: 15px;
+  }
+  #peta-section .interface-2 {
+    bottom: 15%;
+    padding: .5em;
+  }
+  #peta-section .interface-2 .zoom {
+    padding: 5px;
+    border-radius: 15px;
+  }
+  #peta-section .interface-2 .zoom .navigation-btn {
+    padding: 4px 7px;
+    border-radius: 10px;
+  }
   footer .social-info .footer-logo .logo {
     margin: 0 auto 20px;
   }
@@ -487,6 +517,20 @@ footer .footnote p {
   }
   .bg-home .hero-banner {
     height: 100%;
+  }
+  #peta-section .navigation-btn {
+    padding: 1.0em;
+    border-radius: 20px;
+  }
+  #peta-section .navigation-btn i {
+    font-size: 18px;
+  }
+  #peta-section .interface {
+    padding: .7em;
+    border-radius: 25px;
+  }
+  #peta-section .interface-2 .zoom .navigation-btn {
+    padding: .4em;
   }
 }
 

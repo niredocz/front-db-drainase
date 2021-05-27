@@ -50,11 +50,11 @@
     </div>
     <div class="interface">
         <div class="menu-bar">
-            <a class="navigation-btn" href="#"><i class="fas fa-home"></i></a>
+            <a class="navigation-btn ml-0" href="#"><i class="fas fa-home"></i></a>
             <a class="navigation-btn" href="#"><i class="fas fa-info-circle"></i></a>
             <a class="navigation-btn" href="#"><i class="fas fa-layer-group"></i></a>
             <a class="navigation-btn" href="#"><i class="fas fa-globe-americas"></i></a>
-            <a class="navigation-btn" href="#"><i class="fas fa-user"></i></a>
+            <a class="navigation-btn mr-0" href="#"><i class="fas fa-user"></i></a>
         </div>
     </div>
     <div class="interface-2">
@@ -77,11 +77,15 @@
 <!-- Leaflet JS Resources -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <script>
-    var map = L.map('chart-map').setView([-2.8349313860427057, 117.76367187500001], 6);
+    var map = L.map('chart-map', {
+        attributionControl: false,
+        zoomControl: false
+    }).setView([-7.57110295267244, 110.82622065004949], 14);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
+        minZoom: 6,
         tileSize: 512,
         zoomOffset: -1,
         scrollWheelZoom: false,
