@@ -335,11 +335,12 @@ body {
   flex-direction: column;
   padding: 10px 0;
   background-color: #fff;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 #peta-section .interface-2 .zoom .ruler {
   border: 1px solid #253e7552;
+  background-color: #253e7552;
   margin: 10px;
 }
 
@@ -455,6 +456,9 @@ footer .footnote p {
   #graph-home .chart i {
     font-size: 20px;
   }
+  .search-bar {
+    min-width: 100px;
+  }
   #peta-section .navigation-btn {
     padding: .5em .7em;
     border-radius: 13px;
@@ -531,6 +535,12 @@ footer .footnote p {
   }
   #peta-section .interface-2 .zoom .navigation-btn {
     padding: .4em;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-peta .navbar-collapse {
+    flex-grow: initial;
   }
 }
 
