@@ -441,12 +441,50 @@ footer {
     .modal-content {
         border-radius: 20px 20px 0px 20px;
         .modal-header {
-            border: none;
+            padding: 1rem 0;
+            margin: 0 1rem;
 
             .modal-title {
                 font-size: 18px;
                 font-weight: 700;
                 color: $secondary-dark;
+            }
+        }
+        .modal-body {
+            padding: .5rem 1rem 3rem;
+            display: grid;
+
+            > [class*="select"] {
+                margin: 10px 0;
+
+                h5 {
+                    margin: 0 0 10px;
+                }
+            }
+            .select2-selection--single {
+                display: block;
+                width: 100%;
+                height: calc(1.5em + .9rem + 2px);
+                padding: .45rem .9rem;
+                font-size: .875rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #6c757d;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: .2rem;
+
+                .select2-selection__rendered {
+                    line-height: 1.5;
+                    padding-left: 0;
+                }
+            }
+            .select2-selection__arrow {
+                top: 0;
+                right: 0;
+                width: 35px;
+                height: calc(1.5em + .9rem + 2px);
             }
         }
         .modal-footer {

@@ -149,6 +149,7 @@
 @media (min-width:576px) {
     .modal-dialog {
         margin: 10rem auto 0;
+        max-width: 350px;
     }
 }
 @media (min-width:768px) {
@@ -172,11 +173,14 @@
     .container-lg {
         max-width: 1140px;
     }
+    .modal-dialog {
+        margin: 4rem auto 0;
+    }
 }
 
 @media (min-width: 1600px) {
     .modal-dialog {
         // max-width: 800px;
-        margin: 20rem auto 0;
+        margin: 15rem auto 0;
     }
 }

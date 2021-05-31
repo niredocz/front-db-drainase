@@ -425,13 +425,54 @@ footer .footnote p {
 }
 
 .modal .modal-content .modal-header {
-  border: none;
+  padding: 1rem 0;
+  margin: 0 1rem;
 }
 
 .modal .modal-content .modal-header .modal-title {
   font-size: 18px;
   font-weight: 700;
   color: #253E75;
+}
+
+.modal .modal-content .modal-body {
+  padding: .5rem 1rem 3rem;
+  display: grid;
+}
+
+.modal .modal-content .modal-body > [class*="select"] {
+  margin: 10px 0;
+}
+
+.modal .modal-content .modal-body > [class*="select"] h5 {
+  margin: 0 0 10px;
+}
+
+.modal .modal-content .modal-body .select2-selection--single {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .9rem + 2px);
+  padding: .45rem .9rem;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6c757d;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .2rem;
+}
+
+.modal .modal-content .modal-body .select2-selection--single .select2-selection__rendered {
+  line-height: 1.5;
+  padding-left: 0;
+}
+
+.modal .modal-content .modal-body .select2-selection__arrow {
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: calc(1.5em + .9rem + 2px);
 }
 
 .modal .modal-content .modal-footer {
@@ -595,6 +636,7 @@ footer .footnote p {
 @media (min-width: 576px) {
   .modal-dialog {
     margin: 10rem auto 0;
+    max-width: 350px;
   }
 }
 
@@ -618,11 +660,14 @@ footer .footnote p {
   .container-lg {
     max-width: 1140px;
   }
+  .modal-dialog {
+    margin: 4rem auto 0;
+  }
 }
 
 @media (min-width: 1600px) {
   .modal-dialog {
-    margin: 20rem auto 0;
+    margin: 15rem auto 0;
   }
 }
 /*# sourceMappingURL=custom.css.map */

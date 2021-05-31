@@ -13,6 +13,9 @@
    <link rel="shortcut icon" href="assets/images/img-logo.png">
    <!-- Icons -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+   <!-- Select2 Library -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
    <!-- Leaflet CSS Library -->
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
    <!-- Styles -->
@@ -67,7 +70,7 @@
     </div>
 </section>
 
-<div class="modal fade" id="modalInfo" data-backdrop="false" tabindex="-1" aria-labelledby="modalInfoLabel" aria-hidden="true">
+<div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="modalInfoLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -77,7 +80,48 @@
             </button>
           </div>
           <div class="modal-body">
-            
+              <form action="">
+                  <div class="select-kecamatan">
+                      <h5>Pilih Kecamatan :</h5>
+                      <select class="js-example-basic-single js-states form-control" style="width: 100%;" name="select-kecamatan" id="info-kecamatan">
+                          <option value="1">Banjarsari</option>
+                          <option value="2">Jebres</option>
+                          <option value="3">Laweyan</option>
+                          <option value="4">Pasar Kliwon</option>
+                          <option value="5">Serengan</option>
+                      </select>
+                  </div>
+                  <div class="select-kelurahan">
+                      <h5>Pilih Kelurahan :</h5>
+                      <select class="js-example-basic-single js-states form-control" style="width: 100%;" name="select-kelurahan" id="info-kelurahan">
+                          <option value="1">Banyuanyar</option>
+                          <option value="2">Banjarsari</option>
+                          <option value="3">Gilingan</option>
+                          <option value="4">Joglo</option>
+                          <option value="5">Kadipiro</option>
+                          <option value="6">Keprabon</option>
+                          <option value="7">Kestalan</option>
+                          <option value="8">Ketelan</option>
+                          <option value="9">Mangkubumen</option>
+                          <option value="10">Nusukan</option>
+                          <option value="11">Punggawan</option>
+                          <option value="12">Setabelan</option>
+                          <option value="13">Sumber</option>
+                          <option value="14">Timuran</option>
+                      </select>
+                  </div>
+                  <div class="select-kodepos">
+                      <h5>Pilih Kodepos :</h5>
+                      <select class="js-example-basic-single js-states form-control" style="width: 100%;" name="select-kodepos" id="info-kodepos">
+                          <option value="1">57160</option>
+                          <option value="2">57161</option>
+                          <option value="3">57162</option>
+                          <option value="4">57163</option>
+                          <option value="5">57164</option>
+                          <option value="6">57165</option>
+                      </select>
+                  </div>
+              </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-reset"><i class="fas fa-retweet"></i></button>
@@ -90,7 +134,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal Layer</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Layers</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <i class="fas fa-times-circle"></i>
             </button>
@@ -99,13 +143,13 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis pariatur numquam magnam fugit provident nam.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-reset"><i class="fas fa-retweet"></i></button>
+            <button type="button" class="btn btn-apply">Terapkan</button>
           </div>
         </div>
       </div>
 </div>
-<div class="modal fade" id="baseMap" tabindex="-1" aria-labelledby="baseMapLabel" aria-hidden="true">
+<div class="modal fade" id="baseMap" data-backdrop="false" tabindex="-1" aria-labelledby="baseMapLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -121,8 +165,8 @@
             </select>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-reset"><i class="fas fa-retweet"></i></button>
+            <button type="button" class="btn btn-apply">Terapkan</button>
           </div>
         </div>
       </div>
@@ -132,9 +176,10 @@
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/scrollspy.min.js"></script>
 <script src="assets/js/app.js"></script>
-
+<!-- Select2 Library -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <!-- Leaflet JS Resources -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
 <script>
     var map = L.map('chart-map', {
         attributionControl: false,
@@ -152,89 +197,10 @@
         accessToken: 'pk.eyJ1IjoibmlyZWRvY3oiLCJhIjoiY2tsMjhpM3BkM3JpcDJvcW42cXo3NGNnMSJ9.rBOz7uajzNiVUcgbDfiZ0A'
     }).addTo(map);
 </script>
-<script type="text/javascript">
-    const csrf = {
-        token_name: 'surakarta_covid',
-        hash: 'f3a8bd94dc1401dfd8332de90c09627e'
-    }
-
-    var map;
-    var basemap = {};
-    var active_basemap = 'osm';
-    var zoom = 13;
-    var layers = {};
-    var search_marker = '';
-    var active_icons = {};
-    const xconfig = [];
-    const xdata = [];
-    const xalias = [];
-
-    $(document).ready(() => {
-        select_kategori();
-
-        init_map();
-    });
-
-
-    function init_map() {
-        map = L.map('map', {
-            attributionControl: false,
-            zoomControl: false
-        }).setView([-0.8349313860427057, 112.76367187500001], 6);
-
-        basemap = {
-            osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map),
-            google_roadmap: L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            google_satellite: L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            google_hybrid: L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            google_terrain: L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            esri_world_imagery: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                maxZoom: 17
-            }),
-            esri_world_street_map: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}'),
-            esri_world_topo_map: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'),
-            citra_satelit: L.esri.imageMapLayer({
-                url: 'https://portal.ina-sdi.or.id/arcgis/rest/services/CITRASATELIT/JawaBaliNusra_2015_ImgServ1/ImageServer',
-                attribution: 'Badan Informasi Geospasial'
-            }),
-            peta_rbi: L.esri.dynamicMapLayer({
-                url: 'https://portal.ina-sdi.or.id/arcgis/rest/services/IGD/RupabumiIndonesia/MapServer',
-                attribution: 'Badan Informasi Geospasial'
-            }),
-            peta_rbi_opensource: L.tileLayer.wms('http://palapa.big.go.id:8080/geoserver/gwc/service/wms', {
-                maxZoom: 20,
-                layers: "basemap_rbi:basemap",
-                format: "image/png",
-                attribution: 'Badan Informasi Geospasial'
-            })
-
-        }
-        // L.control.layers(basemap).addTo(map);
-        basemap[active_basemap].addTo(map);
-        L.control.scale().addTo(map);
-
-
-        var theMarker = {};
-
-        setTimeout(() => {
-            map.invalidateSize();
-        }, 500);
-    }
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    })
 </script>
 </body>
 </html>
