@@ -142,7 +142,7 @@
           <div class="modal-body">
             <div class="accordion" id="layers-accordion">
                 <div class="card">
-                    <div class="header" id="headingOne">
+                    <div class="header" id="accordionOne">
                       <h2 class="mb-0">
                         <button class="btn-accordion" type="button" data-toggle="collapse" data-target="#layerOne" aria-expanded="true" aria-controls="layerOne">
                           Layer One
@@ -150,9 +150,39 @@
                       </h2>
                     </div>
                 
-                    <div id="layerOne" class="collapse show" aria-labelledby="headingOne" data-parent="#layers-accordion">
+                    <div id="layerOne" class="collapse show" aria-labelledby="accordionOne" data-parent="#layers-accordion">
                       <div class="card-body">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum error totam est deserunt magni fugiat?
+                      </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header" id="accordionTwo">
+                      <h2 class="mb-0">
+                        <button class="btn-accordion collapsed" type="button" data-toggle="collapse" data-target="#layerTwo" aria-expanded="false" aria-controls="layerTwo">
+                          Layer Two
+                        </button>
+                      </h2>
+                    </div>
+                
+                    <div id="layerTwo" class="collapse" aria-labelledby="accordionTwo" data-parent="#layers-accordion">
+                      <div class="card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolores.
+                      </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header" id="accordionThree">
+                      <h2 class="mb-0">
+                        <button class="btn-accordion collapsed" type="button" data-toggle="collapse" data-target="#layerThree" aria-expanded="false" aria-controls="layerThree">
+                          Layer Three
+                        </button>
+                      </h2>
+                    </div>
+                
+                    <div id="layerThree" class="collapse" aria-labelledby="accordionThree" data-parent="#layers-accordion">
+                      <div class="card-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nihil vitae voluptas sequi?
                       </div>
                     </div>
                 </div>
