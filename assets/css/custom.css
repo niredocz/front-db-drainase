@@ -420,6 +420,60 @@ footer .footnote p {
   font-size: 18px;
 }
 
+.modal .modal-content {
+  border-radius: 20px 20px 0px 20px;
+}
+
+.modal .modal-content .modal-header {
+  border: none;
+}
+
+.modal .modal-content .modal-header .modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #253E75;
+}
+
+.modal .modal-content .modal-footer {
+  border: none;
+  justify-content: space-between;
+}
+
+.modal .modal-content .modal-footer .btn-reset {
+  background-color: #fff;
+  color: rgba(221, 57, 42, 0.5);
+  border-radius: 10px;
+  transition: all .2s ease-in-out;
+  border: 1px solid rgba(221, 57, 42, 0.5);
+}
+
+.modal .modal-content .modal-footer .btn-reset:hover {
+  background-color: rgba(221, 57, 42, 0.8);
+  color: #fff;
+}
+
+.modal .modal-content .modal-footer .btn-apply {
+  background-color: rgba(0, 162, 220, 0.5);
+  color: #fff;
+  border-radius: 10px;
+  transition: all .2s ease-in-out;
+  border: 1px solid rgba(0, 162, 220, 0.5);
+}
+
+.modal .modal-content .modal-footer .btn-apply:hover {
+  background-color: rgba(0, 162, 220, 0.9);
+  color: #fff;
+}
+
+.modal .close {
+  cursor: pointer;
+  color: rgba(221, 57, 42, 0.5);
+}
+
+.modal .close:hover {
+  color: #dd392a;
+}
+
 @media screen and (max-width: 768px) {
   .bg-home {
     padding: 100px 0;
@@ -538,6 +592,12 @@ footer .footnote p {
   }
 }
 
+@media (min-width: 576px) {
+  .modal-dialog {
+    margin: 10rem auto 0;
+  }
+}
+
 @media (min-width: 768px) {
   .navbar-peta .navbar-collapse {
     flex-grow: initial;
@@ -557,6 +617,12 @@ footer .footnote p {
 @media (min-width: 1200px) {
   .container-lg {
     max-width: 1140px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .modal-dialog {
+    margin: 20rem auto 0;
   }
 }
 /*# sourceMappingURL=custom.css.map */

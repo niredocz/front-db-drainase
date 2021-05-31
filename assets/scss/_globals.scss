@@ -351,7 +351,7 @@ body {
                 background-color: #253e7552;
                 margin: 10px;
             }
-            
+
             .navigation-btn {
                 padding: .5em;
                 margin: 0 auto;
@@ -433,6 +433,59 @@ footer {
 
         p {
             font-size: 18px;
+        }
+    }
+}
+
+.modal {
+    .modal-content {
+        border-radius: 20px 20px 0px 20px;
+        .modal-header {
+            border: none;
+
+            .modal-title {
+                font-size: 18px;
+                font-weight: 700;
+                color: $secondary-dark;
+            }
+        }
+        .modal-footer {
+            border: none;
+            justify-content: space-between;
+
+            .btn-reset {
+                background-color: #fff;
+                color: rgba(221, 57, 42, 0.5);
+                border-radius: 10px;
+                transition: all .2s ease-in-out;
+                border: 1px solid rgba(221, 57, 42, 0.5);
+
+                &:hover {
+                    background-color: rgba(221, 57, 42, 0.8);
+                    color: #fff;
+                }
+            }
+            .btn-apply {
+                background-color: rgba(0, 162, 220, 0.5);
+                color: #fff;
+                border-radius: 10px;
+                transition: all .2s ease-in-out;
+                border: 1px solid rgba(0, 162, 220, 0.5);
+
+                &:hover {
+                    background-color: rgba(0, 162, 220, 0.9);
+                    color: #fff;
+                }
+
+            }
+        }
+    }
+    .close {
+        cursor: pointer;
+        color: rgba(221, 57, 42, 0.5);
+        
+        &:hover {
+            color: rgba(221, 57, 42, 1);
         }
     }
 }

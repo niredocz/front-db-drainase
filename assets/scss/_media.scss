@@ -146,6 +146,11 @@
         }
     }
 }
+@media (min-width:576px) {
+    .modal-dialog {
+        margin: 10rem auto 0;
+    }
+}
 @media (min-width:768px) {
     .navbar-peta {
         .navbar-collapse {
@@ -166,5 +171,12 @@
 @media (min-width:1200px) {
     .container-lg {
         max-width: 1140px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .modal-dialog {
+        // max-width: 800px;
+        margin: 20rem auto 0;
     }
 }
