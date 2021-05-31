@@ -46,7 +46,7 @@
     }
     #peta-section {
         .navigation-btn {
-            padding: .5em .7em;
+            padding: .7em;
             border-radius: 13px;
             
             i {
@@ -68,8 +68,12 @@
                 padding: 5px;
                 border-radius: 15px;
 
+                .ruler {
+                    margin: 10px 0;
+                }
+
                 .navigation-btn {
-                    padding: 4px 7px;
+                    padding: 7px;
                     border-radius: 10px;
                 }
             }
@@ -77,6 +81,13 @@
     }
     footer .social-info .footer-logo .logo {
         margin: 0 auto 20px;
+    }
+    .modal-dialog {
+        margin-top: 5em;
+    }
+    .basemap {
+        max-height: 200px;
+        overflow-x: scroll;
     }
 }
 @media screen and (max-width: 767px) {
@@ -176,11 +187,14 @@
     .modal-dialog {
         margin: 4rem auto 0;
     }
+    .basemap {
+        max-height: 250px;
+        overflow-x: scroll;
+    }
 }
 
 @media (min-width: 1600px) {
     .modal-dialog {
-        // max-width: 800px;
-        margin: 15rem auto 0;
+        margin: 10rem auto 0;
     }
 }

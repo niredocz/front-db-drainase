@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="interface-2">
-        <div class="d-flex compass">
+        <div class="d-flex compass" id="zoom_default">
             <a class="navigation-btn" href="javascript:void(0);"><i class="fas far fa-compass"></i></a>
         </div>
         <div class="d-flex zoom">
@@ -140,7 +140,23 @@
             </button>
           </div>
           <div class="modal-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis pariatur numquam magnam fugit provident nam.
+            <div class="accordion" id="layers-accordion">
+                <div class="card">
+                    <div class="header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button class="btn-accordion" type="button" data-toggle="collapse" data-target="#layerOne" aria-expanded="true" aria-controls="layerOne">
+                          Layer One
+                        </button>
+                      </h2>
+                    </div>
+                
+                    <div id="layerOne" class="collapse show" aria-labelledby="headingOne" data-parent="#layers-accordion">
+                      <div class="card-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum error totam est deserunt magni fugiat?
+                      </div>
+                    </div>
+                </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-reset"><i class="fas fa-retweet"></i></button>
@@ -149,7 +165,7 @@
         </div>
       </div>
 </div>
-<div class="modal fade" id="baseMap" data-backdrop="false" tabindex="-1" aria-labelledby="baseMapLabel" aria-hidden="true">
+<div class="modal fade" id="baseMap" tabindex="-1" aria-labelledby="baseMapLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -159,10 +175,54 @@
             </button>
           </div>
           <div class="modal-body">
-            <select name="basemap" id="base-map">
-                <option value="1">OSM</option>
-                <option value="2">G-Roadmap</option>
-            </select>
+            <form action="">
+                <div class="basemap">
+                    <label class="radio">
+                        <input type="radio" name="radio" checked/>
+                        <span>Open Street Map</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>Google Roadmap</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>Google Satellite</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>Google Hybrid</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>Google Terrain</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>ESRI World Imagery</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>ESRI World Street Map</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>ESRI World Topo Map</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>Citra Satelit</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>Peta Rupa Bumi Indonesia</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="radio"/>
+                        <span>Peta Rupa Bumi Indonesia Open Source</span>
+                    </label>
+                </div>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-reset"><i class="fas fa-retweet"></i></button>
@@ -181,26 +241,29 @@
 <!-- Leaflet JS Resources -->
 
 <script>
-    var map = L.map('chart-map', {
-        attributionControl: false,
-        zoomControl: false
-    }).setView([-7.57110295267244, 110.82622065004949], 14);
-
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        minZoom: 6,
-        tileSize: 512,
-        zoomOffset: -1,
-        scrollWheelZoom: false,
-        id: 'mapbox/streets-v11',
-        accessToken: 'pk.eyJ1IjoibmlyZWRvY3oiLCJhIjoiY2tsMjhpM3BkM3JpcDJvcW42cXo3NGNnMSJ9.rBOz7uajzNiVUcgbDfiZ0A'
-    }).addTo(map);
-</script>
-<script>
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
+        $('#zoom_default').click(function() {
+            map.flyTo([-7.57110295267244, 110.82622065004949], 14);
+        })
+
+        var map = L.map('chart-map', {
+            attributionControl: false,
+            zoomControl: false
+        }).setView([-7.57110295267244, 110.82622065004949], 14);
+    
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            minZoom: 6,
+            tileSize: 512,
+            zoomOffset: -1,
+            scrollWheelZoom: false,
+            id: 'mapbox/streets-v11',
+            accessToken: 'pk.eyJ1IjoibmlyZWRvY3oiLCJhIjoiY2tsMjhpM3BkM3JpcDJvcW42cXo3NGNnMSJ9.rBOz7uajzNiVUcgbDfiZ0A'
+        }).addTo(map);
     })
+
 </script>
 </body>
 </html>
